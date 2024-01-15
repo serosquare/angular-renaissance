@@ -1,1 +1,20 @@
-<p>posts works!</p>
+<section class="posts">
+  <header class="posts-header">
+    <div class="posts-header_left">
+      <h2 class="posts-header_title">Posts</h2>
+    </div>
+    <div class="posts-header_right">
+      <div class="posts-liked">
+        <h5>Liked Posts:</h5>
+        <ng-container *ngIf="likedPosts$ | async as likedPosts">
+          <span
+            [ngStyle]="{'font-size': likedPosts.length === 0 ? '1rem' : (1 + (likedPosts.length * 0.25)) > 2 ? 2 : (1 + (likedPosts.length * 0.25)) + 'rem' }">{{
+            likedPosts.length || 0
+            }}</span>
+        </ng-container>
+      </div>
+      <a class="posts-header_link" routerLink="/posts/create">New Post</a>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+</section>

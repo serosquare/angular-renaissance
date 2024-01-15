@@ -1,0 +1,8 @@
+<ng-container *ngIf="(post$ | async) as post">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.body }}</p>
+  <br>
+  <span *ngFor="let tag of post.tags">{{ tag }}</span>
+</ng-container>
+<br>
+<a routerLink="/posts">Go Back</a>
