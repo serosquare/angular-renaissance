@@ -13,7 +13,9 @@ bootstrapApplication(
   AppComponent,
   {
     providers: [
-      provideRouter([])
+      provideRouter([
+        { path: '', loadChildren: () => import('./app/app.routing').then(m => m.AppRoutes) },
+      ])
     ],
   }
 )
