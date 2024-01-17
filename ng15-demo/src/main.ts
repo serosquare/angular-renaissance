@@ -15,6 +15,7 @@ bootstrapApplication(
     providers: [
       provideRouter([
         { path: '', loadChildren: () => import('./app/app.routing').then(m => m.AppRoutes) },
+        { path: 'posts', loadChildren: () => import('./app/pages/posts/posts.routing').then(m => m.postsRoutes) },
       ])
     ],
   }
