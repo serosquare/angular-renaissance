@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "✨ root",
+			"path": ".."
+		},
+		{
+			"name": "ng13-demo",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
