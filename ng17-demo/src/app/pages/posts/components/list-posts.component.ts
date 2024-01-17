@@ -18,11 +18,14 @@ import { LikedService } from '../services/liked.service';
           <h3 class="posts-list_title">
             <a class="posts-list_title_link" routerLink="/posts/{{ post.id }}">{{ post.body }}</a>
           </h3>
-          <div class="posts-list_like" [ngClass]="{'posts-list_liked': likedService.postHaveLikes(post.id) }"
-            (click)="likedService.toggleLikes(post.id)">
-            <span class="material-symbols-outlined">
-              favorite
-            </span>
+          <div
+            class="posts-list_like"
+            [ngClass]="{'posts-list_liked': likedService.postHaveLikes(post.id) }"
+            (click)="likedService.toggleLikes(post.id)"
+          >
+              <span class="material-symbols-outlined">
+                favorite
+              </span>
           </div>
         </article>
       </ng-container>

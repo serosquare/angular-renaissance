@@ -31,7 +31,9 @@ import { IPost } from '../models/post.model';
         <label for="tags">Tags</label>
         <br>
         <select name="tags" id="tags" multiple formControlName="tags">
-          <option *ngFor="let tag of tags" [value]="tag.id" [ngValue]="tag.name">{{ tag.name }}</option>
+          @for (tag of tags; track tag.id) {
+            <option [ngValue]="tag.name">{{ tag.name }}</option>
+          }
         </select>
       </div>
       <button type="submit">Create</button>
